@@ -1,0 +1,96 @@
+/* index.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* background-color: var(--BG_COLOR); */
+
+}
+
+body {
+  background-color: var(--BG_COLOR);
+
+}
+
+/* Define light mode variables */
+:root {
+  --BG_COLOR: #f5f5f5; /* Light background color */
+  --TEXT_COLOR: #1a1a1a; /* Dark text color */
+  --NAV_BG_COLOR: #ffffff; /* Light nav background color */
+  --NAV_TEXT_COLOR: #1a1a1a; /* Light nav text color */
+  --INPUT_BG: #ffffff; /* Light input background */
+  --INPUT_TEXT: #1a1a1a; /* Dark text for input */
+  --BORDER_COLOR: #ccc; /* Light border color */
+}
+
+/* Define dark mode variables */
+.dark {
+  --BG_COLOR: #1a1a1a; /* Dark background color */
+  --TEXT_COLOR: #f5f5f5; /* Light text color */
+  --NAV_BG_COLOR: #2a2a2a; /* Dark nav background color */
+  --NAV_TEXT_COLOR: #f5f5f5; /* Dark nav text color */
+  --INPUT_BG: #2a2a2a; /* Dark input background */
+  --INPUT_TEXT: #f5f5f5; /* Light text for input */
+  --BORDER_COLOR: #444; /* Dark border color */
+}
+
+@layer components {
+  .max-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--BG_COLOR);
+    color: var(--TEXT_COLOR);
+  }
+
+  .input {
+    @apply sm:flex-1 max-sm:w-full text-base leading-normal pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray max-sm:rounded-full;
+    background-color: var(--INPUT_BG); /* Dynamic input background */
+    color: var(--INPUT_TEXT); /* Dynamic text color */
+    border: 1px solid var(--BORDER_COLOR); /* Dynamic border */
+  }
+}
+
+@layer utilities {
+  .info-text {
+    @apply text-lg leading-7;
+    color: var(--TEXT_COLOR); /* Dynamic text color */
+  }
+  
+  /* Padding utilities remain unchanged */
+  .padding {
+    @apply sm:px-16 px-8 sm:py-24 py-12;
+  }
+
+  .padding-x {
+    @apply sm:px-16 px-8;
+  }
+
+  .padding-y {
+    @apply sm:py-24 py-12;
+  }
+
+  .padding-l {
+    @apply sm:pl-16 pl-8;
+  }
+
+  .padding-r {
+    @apply sm:pr-16 pr-8;
+  }
+
+  .padding-t {
+    @apply sm:pt-24 pt-12;
+  }
+
+  .padding-b {
+    @apply sm:pb-24 pb-12;
+  }
+}
