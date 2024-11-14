@@ -20,12 +20,24 @@ function Mode() {
   }, [isDarkMode]);
 
   return (
-    <div>
-      <button id="toggleDark" onClick={toggleDarkMode}>
-        Toggle Dark Mode
+    <div className='mx-2'>
+      <button 
+        id="toggleDark" 
+        onClick={toggleDarkMode}
+        style={{
+          padding: '10px 20px',
+          backgroundColor: isDarkMode ? '#333' : '#fff',
+          color: isDarkMode ? '#fff' : '#333',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer'
+        }}
+      >
+        {isDarkMode ? 'Light' : 'Dark'}
       </button>
     </div>
   );
 }
 
 export default Mode;
+
